@@ -20,12 +20,12 @@ export default new Vuex.Store({
     saveCategory(context, category) {
       console.log(category)
       if (category.id)
-        api.saveCategory(id, category).then(response => context.dispatch('loadCategories'))
+        api.saveCategory(category).then(() => context.dispatch('loadCategories'))
       else
-        api.addCategory(category).then(response => context.dispatch('loadCategories'))
+        api.addCategory(category).then(() => context.dispatch('loadCategories'))
     },
     deleteCategory(context, id) {
-      api.deleteCategory(id).then(response => context.dispatch('loadCategories'))      
+      api.deleteCategory(id).then(() => context.dispatch('loadCategories'))      
     }
   },
   getters: {

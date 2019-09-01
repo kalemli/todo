@@ -12,8 +12,8 @@ export default {
     addCategory(category) {
         return AXIOS.post('/category', category);
     },
-    saveCategory(id, category) {
-        return AXIOS.put(`/category/${id}`, category);
+    saveCategory(category) {
+        return AXIOS.put(`/category/${category.id}`, category);
     },
     deleteCategory(id) {
         return AXIOS.delete(`/category/${id}`);
