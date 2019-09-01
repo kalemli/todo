@@ -1,0 +1,14 @@
+/Users/kalemli/startup/todo/backend/ToDo.Api/bin/Debug/netcoreapp2.2/ToDo.Api.deps.json
+/Users/kalemli/startup/todo/backend/ToDo.Api/bin/Debug/netcoreapp2.2/ToDo.Api.runtimeconfig.json
+/Users/kalemli/startup/todo/backend/ToDo.Api/bin/Debug/netcoreapp2.2/ToDo.Api.runtimeconfig.dev.json
+/Users/kalemli/startup/todo/backend/ToDo.Api/bin/Debug/netcoreapp2.2/ToDo.Api.dll
+/Users/kalemli/startup/todo/backend/ToDo.Api/bin/Debug/netcoreapp2.2/ToDo.Api.pdb
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.csprojAssemblyReference.cache
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.csproj.CoreCompileInputs.cache
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.RazorAssemblyInfo.cache
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.RazorAssemblyInfo.cs
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.AssemblyInfoInputs.cache
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.AssemblyInfo.cs
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.RazorTargetAssemblyInfo.cache
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.dll
+/Users/kalemli/startup/todo/backend/ToDo.Api/obj/Debug/netcoreapp2.2/ToDo.Api.pdb
