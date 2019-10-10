@@ -27,7 +27,6 @@ namespace ToDo.Api.Controllers
                 .ToList();
         }
 
-        // GET api/values/5
         [HttpGet("categories/{id}")]
         public ActionResult<Category> GetCategory(int id)
         {
@@ -68,6 +67,47 @@ namespace ToDo.Api.Controllers
             if (category == null) return NotFound();
 
             category.IsActive = false;
+            _dbContext.SaveChanges();
+            return Ok();
+        }
+
+        [HttpGet("tasks/{categoryId?}")]
+        public ActionResult GetTasks(int? categoryId)
+        {
+            var categories = _dbContext.Categories.Where(category => 
+                category.IsActive && (category.Id == categoryId 
+                    || category.ParentId == categoryId));
+
+            var list = _dbContext.Tasks
+                .Where(task => categories.Contains(task.Category))
+                .OrderByDescending(task => task.StartTime)
+                .ToList()
+                .Select(task => new 
+                {
+                    task.Id, task.TaskDate, task.StartTime, task.EndTime, task.DelayTime, task.CategoryId,
+                    TaskDay = task.TaskDate.ToString(@"dd.MM.yyyy"),
+                    Start = task.StartTime.ToString(@"hh\:mm"),
+                    End = task.EndTime.ToString(@"hh\:mm"),
+                    Delay = task.DelayTime.ToString(@"hh\:mm"),
+                    Period = (task.EndTime - task.StartTime - task.DelayTime).ToString(@"hh\:mm"),
+                    Category = task.Category?.Name
+                });
+            return Ok(list);
+        }
+
+        [HttpPost("task")]
+        public ActionResult AddTask(Models.TaskModel model)
+        {
+            var task = new Domain.Task
+            {
+                Id = model.Id,
+                TaskDate = model.TaskDate,
+                StartTime = model.StartTime.TimeOfDay,
+                EndTime = model.EndTime.TimeOfDay,
+                DelayTime = model.DelayTime.TimeOfDay,
+                CategoryId = model.CategoryId
+            };
+            _dbContext.Tasks.Add(task);
             _dbContext.SaveChanges();
             return Ok();
         }

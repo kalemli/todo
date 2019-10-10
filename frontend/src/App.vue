@@ -31,9 +31,11 @@
             <a class="collapse-item" href="/mothly">Monthly</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">By Categories:</h6>
-            <a class="collapse-item" href="/byCategories/1">BestComp Group</a>
-            <a class="collapse-item" href="/byCategories/2">Startup</a>
-            <a class="collapse-item" href="/byCategories/3">Language learning</a>
+            <a class="collapse-item" v-for="category in topCategories"
+              v-bind:key="category.id"
+              :href="`/byCategories/${category.id}`">
+              {{category.name}}
+            </a>
           </div>
         </div>        
       </li>
@@ -302,13 +304,22 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   data: function() {
     return {
       isSidebarToggled: false
     }
   },
+  computed: {
+      ...mapGetters([ 'topCategories' ])
+  },
+  created() {
+      this.loadCategories();
+  },
   methods: {
+      ...mapActions(['loadCategories' ]),
     toggleSidebar() {
       this.isSidebarToggled = !this.isSidebarToggled;
     }

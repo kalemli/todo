@@ -25,7 +25,10 @@ namespace ToDo.Api
 
             services.AddMvc()
                 .AddJsonOptions(options => 
-                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore)
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                    options.SerializerSettings.DateTimeZoneHandling = DateTimeZoneHandling.Local;
+                })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

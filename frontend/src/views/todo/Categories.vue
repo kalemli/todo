@@ -16,7 +16,7 @@
             <div class="form-group col-md-4">
                 <label for="categoryGroup">Group:</label>
                 <select v-model="current.parentId" class="form-control form-control-sm" id="categoryGroup">
-                    <option value="0"></option>
+                    <option></option>
                     <option v-for="category in topCategories" 
                             v-bind:key="category.id"
                             :value="category.id"
@@ -62,7 +62,7 @@ export default {
     name: 'Categories',
     data() {
         return {
-            current: { parentId: 0 }
+            current: { parentId: null }
         }
     },
     computed: {
@@ -72,15 +72,12 @@ export default {
     methods: {
         ...mapActions(['loadCategories', 'saveCategory', 'deleteCategory' ]),
         cancel() {
-            this.current = { parentId: 0 }
+            this.current = { parentId: null }
         },
         save() {
             this.saveCategory(this.current)
             this.cancel();
         }
-    },
-    created() {
-        this.loadCategories();
-    },
+    }
 }
 </script>

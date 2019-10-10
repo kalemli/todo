@@ -18,4 +18,17 @@ export default {
     deleteCategory(id) {
         return AXIOS.delete(`/category/${id}`);
     },
+
+    loadTasks(categoryId) {
+        return AXIOS.get(`/tasks/${categoryId}`);
+    },
+    addTask(task) {
+        return AXIOS.post('/task', task);
+    },
+    saveTask(task) {
+        return AXIOS.put(`/task/${task.id}`, task);
+    },
+    deleteTask(id) {
+        return AXIOS.delete(`/task/${id}`);
+    },
 }

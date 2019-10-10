@@ -1,18 +1,11 @@
 <template>
-  <div class="card shadow mb-4">
-    <div class="card-header py-3">
-      <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
-    </div>
-    <div class="card-body">
-      <div class="table-responsive">
-        <v-data-table dense
-          :headers="headers"
-          :items="tasks"
-          :items-per-page="5"
-          class="elevation-1"
-        ></v-data-table>
-      </div>
-    </div>
+  <div class="table-responsive">
+    <v-data-table dense
+      :headers="headers"
+      :items="tasks"
+      :items-per-page="5"
+      class="elevation-1"
+    ></v-data-table>
   </div>
 </template>
 
